@@ -1129,9 +1129,7 @@ app.get('/api/getAthenaResults', (req, res) => {
   const athenaExpressConfig = { aws: AWS }; //configuring athena-express with aws sdk object
   const athenaExpress = new AthenaExpress(athenaExpressConfig);
   let query = {
-    // sql: "MSCK REPAIR TABLE `abc_pk`;" /* required */,
     sql: repairquery /* required */,
-    //db: "abcpkdatabaselink" /* optional. You could specify a database here or in the advance configuration option mentioned above*/
     db: dbname
   };
   
@@ -1141,9 +1139,7 @@ app.get('/api/getAthenaResults', (req, res) => {
       console.log(results);
 
       let query = {
-        //sql: "SELECT * FROM abcpkdatabaselink.abc_pk limit 10;" /* required */,
-        //db: "abcpkdatabaselink" /* optional. You could specify a database here or in the advance configuration option mentioned above*/
-        sql: previewquery,
+         sql: previewquery,
         db: dbname
       };
       athenaExpress
